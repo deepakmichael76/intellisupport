@@ -1,0 +1,45 @@
+services:
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/customer-support-chatbot
+      JWT_SECRET: ${JWT_SECRET:-dev-secret}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-dev-refresh-secret}
+      NEXT_PUBLIC_SOCKET_URL: http://localhost:3001
+    depends_on:
+      - mongodb
+    volumes:
+      - ./.env:/app/.env:ro
+
+  socket:
+    build: .
+    command: npm run start:socket
+    ports:
+      - "3001:3001"
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/customer-support-chatbot
+      SOCKET_PORT: 3001
+      CORS_ORIGIN: http://localhost:3000
+      JWT_SECRET: ${JWT_SECRET:-dev-secret}
+    depends_on:
+      - mongodb
+
+  rasa:
+    image: rasa/rasa:3.6.20
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./rasa:/app
+    command: run --enable-api --cors "*"
+
+volumes:
+  mongo_data:

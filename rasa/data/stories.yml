@@ -1,0 +1,31 @@
+version: "3.1"
+stories:
+- story: greet path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: order status path
+  steps:
+  - intent: order_status
+  - action: utter_order_status
+
+- story: refund path
+  steps:
+  - intent: refund
+  - action: utter_refund
+
+- story: complaint path
+  steps:
+  - intent: complaint
+  - action: utter_complaint
+
+- story: pricing path
+  steps:
+  - intent: pricing
+  - action: utter_pricing
+
+- story: support path
+  steps:
+  - intent: support
+  - action: utter_support

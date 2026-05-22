@@ -1,0 +1,46 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good afternoon
+
+- intent: order_status
+  examples: |
+    - track my order
+    - where is my package
+    - order status
+    - shipping update
+    - when will my order arrive
+    - Track my order
+    - Where is my package
+
+- intent: refund
+  examples: |
+    - I want a refund
+    - return my product
+    - money back
+    - cancel and refund
+
+- intent: complaint
+  examples: |
+    - I have a complaint
+    - terrible service
+    - product is broken
+    - very disappointed
+
+- intent: pricing
+  examples: |
+    - how much does it cost
+    - pricing plans
+    - what are your prices
+
+- intent: support
+  examples: |
+    - I need help
+    - talk to support
+    - customer service
+    - assist me

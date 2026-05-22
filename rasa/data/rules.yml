@@ -1,0 +1,31 @@
+version: "3.1"
+rules:
+- rule: Say greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say order status
+  steps:
+  - intent: order_status
+  - action: utter_order_status
+
+- rule: Say refund
+  steps:
+  - intent: refund
+  - action: utter_refund
+
+- rule: Say complaint
+  steps:
+  - intent: complaint
+  - action: utter_complaint
+
+- rule: Say pricing
+  steps:
+  - intent: pricing
+  - action: utter_pricing
+
+- rule: Say support
+  steps:
+  - intent: support
+  - action: utter_support

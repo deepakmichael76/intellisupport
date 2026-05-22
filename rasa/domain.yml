@@ -1,0 +1,31 @@
+version: "3.1"
+
+intents:
+  - greet
+  - order_status
+  - refund
+  - complaint
+  - pricing
+  - support
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to our support. How can I assist you today?"
+  utter_order_status:
+    - text: "I can help track your order. Please share your order number from your confirmation email."
+  utter_refund:
+    - text: "Refunds are processed within 5-7 business days. Would you like to start a refund request?"
+  utter_complaint:
+    - text: "I'm sorry to hear that. Please describe the issue and we'll help resolve it."
+  utter_pricing:
+    - text: "Our pricing varies by product. Visit our pricing page or tell me which product you're interested in."
+  utter_support:
+    - text: "I'm here to help! Describe your issue and I'll assist or connect you with an agent."
+
+actions:
+  - utter_greet
+  - utter_order_status
+  - utter_refund
+  - utter_complaint
+  - utter_pricing
+  - utter_support
