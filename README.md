@@ -1,4 +1,4 @@
-# AI-Powered Customer Support Chatbot Platform
+# IntelliSupport AI-Powered Customer Support Chatbot Platform
 
 Enterprise-grade customer support platform with NLP intent recognition, real-time live agent handover, analytics, and admin training — built with **Next.js 15**, **MongoDB**, **Socket.IO**, **Rasa**, and **OpenAI**.
 
